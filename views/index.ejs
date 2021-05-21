@@ -1,0 +1,30 @@
+<style>
+    img {
+        height: 100px;
+    }
+    div {
+        display: flex;
+    }
+</style>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>language</td>
+                <td>text</td>
+                <td>image</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (var i = 0; i < list.length; i++) { %>
+            <tr>
+                <td><%= list[i].language %></td>
+                <td><%= list[i].text %></td>
+                <td><img src=<%= list[i].url %> /></td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+<script></script>
