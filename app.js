@@ -62,6 +62,6 @@ app.get('/', async (req, res) => {
     res.render('index', { list });
 });
 
-app.listen(3004, () => {
+app.listen(process.env.PORT || 8080, () => {
     console.log(`Listening ${3004}`);
 });
