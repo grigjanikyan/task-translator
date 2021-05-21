@@ -58,8 +58,12 @@ const getList = async (word, count = 10) => {
 app.set('view engine', 'ejs');
 
 app.get('/', async (req, res) => {
-    const list = await getList(req.query.q, req.query.count);
-    res.render('index', { list });
+    try {
+        const list = await getList(req.query.q || 'hello');
+        res.render('index', { list });
+    } catch (error) {
+        res.send(error);
+    }
 });
 
 app.listen(process.env.PORT || 8080, () => {
